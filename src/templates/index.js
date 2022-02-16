@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import Calendar from '../components/Calendar';
 
 const IndexPage = ({ data }) => {
     const events = data.allEvent.nodes;
@@ -10,7 +11,7 @@ const IndexPage = ({ data }) => {
             <Helmet>
                 <title>Flotiq Gatsby event starter</title>
             </Helmet>
-            <div>Homepage</div>
+            <Calendar />
         </Layout>
     );
 };
