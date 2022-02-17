@@ -1,13 +1,19 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import ContactSection from '../sections/ContactSection';
+import ContactBackgroundImage from '../assets/hero-bg.jpg';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
         <Layout additionalClass={['bg-white']}>
-            <div>Event</div>
+            <ContactSection
+                headerText="Do you have more questions?"
+                subheaderText="Contact us"
+                ContactBackgroundImage={ContactBackgroundImage}
+            />
         </Layout>
     );
 };
