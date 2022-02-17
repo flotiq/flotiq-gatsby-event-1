@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import NextEvents from '../sections/NextEvents';
+import EventDescriptionCard from '../components/EventDescriptionCard';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
@@ -9,6 +10,16 @@ const EventTemplate = ({ data, pageContext }) => {
     return (
         <Layout additionalClass={['bg-white']}>
             <NextEvents events={events} pageContext={pageContext} headerText="Next events:" />
+            <div className="max-w-7xl mx-auto">
+                <EventDescriptionCard
+                    name={event.name}
+                    headerImage={event.image[0] && event.image[0].localFile.publicURL}
+                    date={event.date}
+                    description={event.description}
+                    address={event.address}
+                    price={event.price}
+                />
+            </div>
         </Layout>
     );
 };
