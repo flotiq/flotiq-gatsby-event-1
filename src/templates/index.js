@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
             <Helmet>
                 <title>Flotiq Gatsby event starter</title>
             </Helmet>
-            <Calendar />
+            <Calendar additionalClass={['my-5']} />
         </Layout>
     );
 };

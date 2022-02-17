@@ -84,8 +84,8 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
 
-const Calendar = () => (
-    <div className="max-w-7xl mx-auto">
+const Calendar = ({ additionalClass }) => (
+    <div className={['max-w-7xl mx-auto', ...additionalClass].join(' ')}>
         <div className="lg:flex lg:h-full lg:flex-col">
             <div className="lg:flex lg:flex-auto lg:flex-col">
 
@@ -170,17 +170,15 @@ const Calendar = () => (
                                         : 'bg-light-gray text-gray',
                                     (day.isSelected || day.isToday) && 'font-semibold',
                                     day.isSelected && 'text-white border-2 border-dark-blue',
-                                    !day.isSelected && day.isCurrentMonth && !day.isToday && 'text-gray-900',
-                                    !day.isSelected && !day.isCurrentMonth && !day.isToday && 'text-gray-500',
                                     day.hasEvents ? '!bg-secondary text-white' : 'bg-white',
-                                    'flex h-14 flex-col py-2 px-3 ring-1 ring-gray leading-none',
+                                    'flex h-14 flex-col p-1 ring-1 ring-gray leading-none',
                                 )}
                             >
                                 <time
                                     dateTime={day.date}
                                     className={classNames(
                                         day.isToday ? 'border-2 rounded-full' : 'border-transparent',
-                                        'flex items-center justify-center h-7 w-7',
+                                        'flex items-center justify-center h-7 w-7 text-sm',
                                     )}
                                 >
                                     {day.date.split('-').pop().replace(/^0/, '')}
@@ -203,28 +201,27 @@ const Calendar = () => (
                             </button>
                         ))}
                     </div>
-
                 </div>
             </div>
             {selectedDay?.events.length > 0 && (
                 <div className="py-10 px-4 sm:px-6 lg:hidden">
-                    <ol className="divide-y divide-gray-100 overflow-hidden rounded-lg
-                    bg-white text-sm shadow ring-1 ring-black ring-opacity-5"
-                    >
+                    <ol className="space-y-3 overflow-hidden bg-white text-sm">
                         {selectedDay.events.map((event) => (
-                            <li key={event.id} className="group flex p-4 pr-6 focus-within:bg-gray-50 hover:bg-gray-50">
+                            <li
+                                key={event.id}
+                                className="group flex p-4 pr-6 border border-gray hover:border-secondary"
+                            >
                                 <div className="flex-auto">
-                                    <p className="font-semibold text-gray-900">{event.name}</p>
-                                    <time dateTime={event.datetime} className="mt-2 flex items-center text-gray-700">
-                                        <ClockIcon className="mr-2 h-5 w-5 text-gray-400" aria-hidden="true" />
+                                    <p className="font-semibold text-lg">{event.name}</p>
+                                    <time dateTime={event.datetime} className="mt-2 flex items-center italic">
+                                        <ClockIcon className="mr-2 h-5 w-5 text-secondary" aria-hidden="true" />
                                         {event.time}
                                     </time>
                                 </div>
                                 <a
                                     href={event.href}
-                                    className="ml-6 flex-none self-center rounded-md border border-gray-300
-                                    bg-white py-2 px-3 font-semibold text-gray-700 opacity-0 shadow-sm
-                                    hover:bg-gray-50 focus:opacity-100 group-hover:opacity-100"
+                                    className="ml-6 flex-none self-center bg-secondary py-2 px-3
+                                    font-semibold text-white opacity-0 focus:opacity-100 group-hover:opacity-100"
                                 >
                                     Edit
                                     <span className="sr-only">
