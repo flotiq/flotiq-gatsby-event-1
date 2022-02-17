@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { ClockIcon } from '@heroicons/react/solid';
 
 const days = [
@@ -12,6 +12,7 @@ const days = [
     {
         date: '2022-01-03',
         isCurrentMonth: true,
+        hasEvents: true,
         events: [
             { id: 1, name: 'Design review', time: '10AM', datetime: '2022-01-03T10:00', href: '#' },
             { id: 2, name: 'Sales meeting', time: '2PM', datetime: '2022-01-03T14:00', href: '#' },
@@ -23,7 +24,8 @@ const days = [
     {
         date: '2022-01-07',
         isCurrentMonth: true,
-        events: [{ id: 3, name: 'Date night', time: '6PM', datetime: '2022-01-08T18:00', href: '#' }],
+        hasEvents: true,
+        events: [{ id: 3, name: 'Party night', time: '6PM', datetime: '2022-01-08T18:00', href: '#' }],
     },
     { date: '2022-01-08', isCurrentMonth: true, events: [] },
     { date: '2022-01-09', isCurrentMonth: true, events: [] },
@@ -33,7 +35,8 @@ const days = [
         date: '2022-01-12',
         isCurrentMonth: true,
         isToday: true,
-        events: [{ id: 6, name: "Sam's birthday party", time: '2PM', datetime: '2022-01-25T14:00', href: '#' }],
+        hasEvents: true,
+        events: [{ id: 6, name: 'Birthday party', time: '2PM', datetime: '2022-01-25T14:00', href: '#' }],
     },
     { date: '2022-01-13', isCurrentMonth: true, events: [] },
     { date: '2022-01-14', isCurrentMonth: true, events: [] },
@@ -47,10 +50,11 @@ const days = [
     {
         date: '2022-01-22',
         isCurrentMonth: true,
+        hasEvents: true,
         isSelected: true,
         events: [
-            { id: 4, name: 'Maple syrup museum', time: '3PM', datetime: '2022-01-22T15:00', href: '#' },
-            { id: 5, name: 'Hockey game', time: '7PM', datetime: '2022-01-22T19:00', href: '#' },
+            { id: 4, name: 'Museum visit', time: '3PM', datetime: '2022-01-22T15:00', href: '#' },
+            { id: 5, name: 'Football game', time: '7PM', datetime: '2022-01-22T19:00', href: '#' },
         ],
     },
     { date: '2022-01-23', isCurrentMonth: true, events: [] },
@@ -66,7 +70,8 @@ const days = [
     { date: '2022-02-02', events: [] },
     {
         date: '2022-02-03',
-        events: [{ id: 7, name: 'Cinema with friends', time: '9PM', datetime: '2022-02-04T21:00', href: '#' }],
+        events: [{ id: 7, name: 'Cinema with friends', time: '9PM', datetime: '2022-02-04T21:00', href: '#' },
+            { id: 8, name: 'Drinks with friends', time: '9PM', datetime: '2022-02-04T21:00', href: '#' }],
     },
     { date: '2022-02-04', events: [] },
     { date: '2022-02-05', events: [] },
@@ -83,6 +88,7 @@ const Calendar = () => (
     <div className="max-w-7xl mx-auto">
         <div className="lg:flex lg:h-full lg:flex-col">
             <div className="lg:flex lg:flex-auto lg:flex-col">
+
                 <div className="grid grid-cols-7 gap-px text-center text-base font-normal leading-6 lg:flex-none">
                     <div className="bg-white py-2">
                         MO
@@ -106,82 +112,75 @@ const Calendar = () => (
                         SUN
                     </div>
                 </div>
+
                 <div className="flex ring-1 ring-gray text-base leading-6 lg:flex-auto">
                     <div className="hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px">
                         {days.map((day) => (
                             <div
                                 key={day.date}
                                 className={classNames(
-                                    day.isCurrentMonth ? 'bg-white' : 'text-gray',
-                                    'relative py-2 px-3 ring-1 ring-gray',
+                                    day.isCurrentMonth ? 'flex bg-white' : 'bg-light-gray/[.4] text-gray',
+                                    'relative p-3 ring-1 ring-gray',
+                                    day.hasEvents ? '!bg-secondary text-white' : 'bg-white',
                                 )}
                             >
                                 <time
                                     dateTime={day.date}
-                                    className={
+                                    className={classNames(
                                         day.isToday
-                                            ? 'flex h-6 w-6 items-center justify-center '
-                                            + 'rounded-full bg-secondary font-semibold text-white'
-                                            : undefined
-                                    }
+                                            ? 'flex h-10 w-10 p-1 items-center justify-center '
+                                            + 'text-2xl border-2 rounded-full'
+                                            : 'text-2xl border-2 rounded-full border-transparent',
+                                        day.isToday && day.hasEvents ? 'text-white' : undefined,
+                                    )}
                                 >
                                     {day.date.split('-').pop().replace(/^0/, '')}
                                 </time>
                                 {day.events.length > 0 && (
-                                    <ol className="mt-2">
-                                        {day.events.slice(0, 2).map((event) => (
-                                            <li key={event.id}>
-                                                <a href={event.href} className="group flex">
-                                                    <p className="flex-auto truncate font-medium
-                                                    text-gray-900 group-hover:text-indigo-600"
-                                                    >
-                                                        {event.name}
-                                                    </p>
+                                    <ol className="pl-4">
+                                        {day.events.map((event) => (
+                                            <li key={event.id} className="pb-3">
+                                                <a href={event.href} className="group flex flex-col">
                                                     <time
                                                         dateTime={event.datetime}
-                                                        className="ml-3 hidden flex-none text-gray-500
-                                                        group-hover:text-indigo-600 xl:block"
+                                                        className="hidden flex-none xl:block italic text-xs"
                                                     >
                                                         {event.time}
                                                     </time>
+                                                    <p className="flex-auto font-semibold text-sm">
+                                                        {event.name}
+                                                    </p>
                                                 </a>
                                             </li>
                                         ))}
-                                        {day.events.length > 2 && (
-                                            <li className="text-gray-500">
-                                                +
-                                                {day.events.length - 2}
-                                                {' '}
-                                                more
-                                            </li>
-                                        )}
                                     </ol>
                                 )}
                             </div>
                         ))}
                     </div>
+
                     <div className="isolate grid w-full grid-cols-7 grid-rows-6 gap-px lg:hidden">
                         {days.map((day) => (
                             <button
                                 key={day.date}
                                 type="button"
                                 className={classNames(
-                                    day.isCurrentMonth ? 'bg-white' : 'bg-gray-50',
+                                    day.isCurrentMonth
+                                        ? 'bg-white'
+                                        : 'bg-light-gray text-gray',
                                     (day.isSelected || day.isToday) && 'font-semibold',
-                                    day.isSelected && 'text-white',
-                                    !day.isSelected && day.isToday && 'text-indigo-600',
+                                    day.isSelected && 'text-white border-2 border-dark-blue',
                                     !day.isSelected && day.isCurrentMonth && !day.isToday && 'text-gray-900',
                                     !day.isSelected && !day.isCurrentMonth && !day.isToday && 'text-gray-500',
-                                    'flex h-14 flex-col py-2 px-3 hover:bg-gray-100 focus:z-10',
+                                    day.hasEvents ? '!bg-secondary text-white' : 'bg-white',
+                                    'flex h-14 flex-col py-2 px-3 ring-1 ring-gray leading-none',
                                 )}
                             >
                                 <time
                                     dateTime={day.date}
                                     className={classNames(
-                                        day.isSelected && 'flex h-6 w-6 items-center justify-center rounded-full',
-                                        day.isSelected && day.isToday && 'bg-secondary',
-                                        day.isSelected && !day.isToday && 'bg-primary',
-                                        'ml-auto',
+                                        day.isToday ? 'border-2 rounded-full' : 'border-transparent',
+                                        'flex items-center justify-center h-7 w-7',
                                     )}
                                 >
                                     {day.date.split('-').pop().replace(/^0/, '')}
@@ -204,6 +203,7 @@ const Calendar = () => (
                             </button>
                         ))}
                     </div>
+
                 </div>
             </div>
             {selectedDay?.events.length > 0 && (
