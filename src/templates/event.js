@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
-import EventCards from '../sections/EventCards';
+import NextEvents from '../sections/NextEvents';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
         <Layout additionalClass={['bg-white']}>
-            <EventCards events={events} />
+            <NextEvents events={events} pageContext={pageContext} headerText="Next events:" />
         </Layout>
     );
 };

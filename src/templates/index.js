@@ -10,7 +10,9 @@ const IndexPage = ({ data }) => {
             <Helmet>
                 <title>Flotiq Gatsby event starter</title>
             </Helmet>
-            <div>Homepage</div>
+            {events.map((event) => (
+                <a href={`/${event.slug}`}><p key={event.id}>{event.name}</p></a>
+            ))}
         </Layout>
     );
 };
