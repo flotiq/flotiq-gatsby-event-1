@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
-import ContactSection from '../sections/ContactSection';
+import Contact from '../sections/Contact';
 import ContactBackgroundImage from '../assets/hero-bg.jpg';
 import NextEvents from '../sections/NextEvents';
 import EventDescriptionCard from '../components/EventDescriptionCard';
@@ -10,8 +10,6 @@ const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
-        <Layout additionalClass={['bg-white']}>
-
         <Layout additionalClass={['bg-light-gray']}>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <EventDescriptionCard
@@ -29,11 +27,15 @@ const EventTemplate = ({ data, pageContext }) => {
                 headerText="Next events:"
                 additionalClass={['py-5']}
             />
-          <ContactSection
-            headerText="Do you have more questions?"
-            subheaderText="Contact us"
-            ContactBackgroundImage={ContactBackgroundImage}
-          />
+            <Contact
+                headerText="Do you have more questions?"
+                subheaderText="Contact us"
+                ContactBackgroundImage={ContactBackgroundImage}
+                nameInputLabel="Name"
+                emailInputLabel="Email"
+                messageInputLabel="Message"
+                buttonLabel="Send"
+            />
         </Layout>
     );
 };
