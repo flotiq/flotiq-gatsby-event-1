@@ -8,9 +8,8 @@ const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
-        <Layout additionalClass={['bg-white']}>
-            <NextEvents events={events} pageContext={pageContext} headerText="Next events:" />
-            <div className="max-w-7xl mx-auto">
+        <Layout additionalClass={['bg-light-gray']}>
+            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <EventDescriptionCard
                     name={event.name}
                     headerImage={event.image[0] && event.image[0].localFile.publicURL}
@@ -20,6 +19,12 @@ const EventTemplate = ({ data, pageContext }) => {
                     price={event.price}
                 />
             </div>
+            <NextEvents
+                events={events}
+                pageContext={pageContext}
+                headerText="Next events:"
+                additionalClass={['py-5']}
+            />
         </Layout>
     );
 };

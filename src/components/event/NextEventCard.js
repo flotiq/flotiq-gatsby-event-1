@@ -7,15 +7,15 @@ const NextEventCard = ({ name, headerImage, date, onClick }) => (
         onClick={onClick}
         bordered={false}
         rounded="none"
-        additionalClasses={['flex flex-col cursor-pointer']}
+        additionalClasses={['flex-nowrap flex-col cursor-pointer']}
     >
         <Card.Img
             src={headerImage}
             alt={name}
-            additionalClasses={['w-full']}
+            additionalClasses={['w-full h-full !basis-auto']}
         />
-        <Card.Body>
-            <Card.Title>
+        <Card.Body additionalClasses={['flex flex-col justify-between border border-gray pb-5']}>
+            <Card.Title additionalClasses={['uppercase !text-xl mb-5']}>
                 {name}
             </Card.Title>
             <p>
