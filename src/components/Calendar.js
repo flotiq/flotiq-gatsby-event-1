@@ -1,5 +1,6 @@
 import React from 'react';
 import { ClockIcon } from '@heroicons/react/solid';
+import { Header } from 'flotiq-components-react';
 
 const days = [
     { date: '2021-12-27', events: [] },
@@ -84,8 +85,12 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
 }
 
-const Calendar = ({ additionalClass }) => (
+const Calendar = ({ additionalClass, currentMonthYear, currentDay }) => (
     <div className={['max-w-7xl mx-auto', ...additionalClass].join(' ')}>
+        <div className="flex items-end justify-between text-red pb-10">
+            <Header className="font-normal text-2xl md:text-3xl" text={currentMonthYear} />
+            <Header className="font-normal text-5xl md:text-6xl" level={2} text={currentDay} />
+        </div>
         <div className="lg:flex lg:h-full lg:flex-col">
             <div className="lg:flex lg:flex-auto lg:flex-col">
 

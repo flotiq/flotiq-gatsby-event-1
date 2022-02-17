@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
             <Helmet>
                 <title>Flotiq Gatsby event starter</title>
             </Helmet>
-            <Calendar additionalClass={['my-5']} />
+            <Calendar additionalClass={['my-5']} currentMonthYear="January 2022" currentDay="01" />
         </Layout>
     );
 };
