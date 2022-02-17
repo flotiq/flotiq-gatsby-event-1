@@ -1,13 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import EventCards from '../sections/EventCards';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
         <Layout additionalClass={['bg-white']}>
-            <div>Event</div>
+            <EventCards events={events} />
         </Layout>
     );
 };
@@ -59,7 +60,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        allEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}, limit: 3, filter: {slug: {ne: $slug}}) {
+        allEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}, limit: 4, filter: {slug: {ne: $slug}}) {
             nodes {
                 id
                 name
