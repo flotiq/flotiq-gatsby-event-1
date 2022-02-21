@@ -13,10 +13,10 @@ module.exports = {
                 'light-gray': '#F0F0F0',
                 gray: '#E0E0E0',
             },
-        },
-        fontFamily: {
-            lora: ['Lora', 'sans-serif'],
-            inter: ['Inter', 'sans-serif'],
+            fontFamily: {
+                lora: ['Lora', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
+            },
         },
     },
     presets: [

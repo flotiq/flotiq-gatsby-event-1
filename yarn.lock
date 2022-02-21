@@ -1143,6 +1143,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/lora/-/lora-4.5.4.tgz#152903de2355c2233225f77bab38ff63d32cc258"
   integrity sha512-ByMEakmlcbKD3t9FsSnVoaL+rWPCjOHTql/EhlBpBkLWXmDtaGFNoTNw3ypR5r1LjthIdpIf2i8LgKtVqhj7dA==
 
+"@fontsource/sora@^4.5.3":
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.5.3.tgz#987c9b43acb00c9e3fa5377ebcedfd4ec9b760a7"
+  integrity sha512-0ipYkroLonvChAyLajgIt6mImXMhvjrHwD5g7iX2ZR1eJ4hLDnwq6haW5pSeehe79lPjgp0BX6ZHivFIP0xR2g==
+
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"
   resolved "https://registry.npmjs.org/@gatsbyjs/reach-router/-/reach-router-1.3.6.tgz"
