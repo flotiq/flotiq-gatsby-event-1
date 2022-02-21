@@ -14,9 +14,10 @@ module.exports = {
                 gray: '#E0E0E0',
                 red: '#FF5151',
             },
-        },
-        fontFamily: {
-            lora: ['Lora', 'sans-serif'],
+            fontFamily: {
+                lora: ['Lora', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
+            },
         },
     },
     presets: [
