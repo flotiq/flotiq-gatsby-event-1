@@ -16,6 +16,7 @@ module.exports = {
         },
         fontFamily: {
             lora: ['Lora', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
         },
     },
     presets: [
