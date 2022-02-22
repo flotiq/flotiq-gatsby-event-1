@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import Contact from '../sections/Contact';
+import ContactBackgroundImage from '../assets/hero-bg.jpg';
 import NextEvents from '../sections/NextEvents';
 import EventDescriptionCard from '../components/EventDescriptionCard';
 
@@ -24,6 +26,15 @@ const EventTemplate = ({ data, pageContext }) => {
                 pageContext={pageContext}
                 headerText="Next events:"
                 additionalClass={['py-5']}
+            />
+            <Contact
+                headerText="Do you have more questions?"
+                subheaderText="Contact us"
+                ContactBackgroundImage={ContactBackgroundImage}
+                nameInputLabel="Name"
+                emailInputLabel="Email"
+                messageInputLabel="Message"
+                buttonLabel="Send"
             />
         </Layout>
     );
