@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
 import HeroSection from '../sections/hero-section';
 import HeroSectionBgImage from '../assets/hero-bg.jpg';
+import Calendar from '../components/Calendar';
 
 const IndexPage = ({ data }) => {
     const events = data.allEvent.nodes;
@@ -17,6 +18,7 @@ const IndexPage = ({ data }) => {
                 headerText="Flotiq Webinars"
                 subheaderText="The Power or APIs"
             />
+            <Calendar additionalClass={['my-5']} currentMonthYear="January 2022" currentDay="01" />
         </Layout>
     );
 };
