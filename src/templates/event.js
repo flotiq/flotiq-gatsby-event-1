@@ -1,13 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import NextEvents from '../sections/NextEvents';
 import EventDescriptionCard from '../components/EventDescriptionCard';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
+    const events = data.allEvent.nodes;
     return (
-        <Layout additionalClass={['bg-white']}>
-            <div className="max-w-7xl mx-auto">
+        <Layout additionalClass={['bg-light-gray']}>
+            <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <EventDescriptionCard
                     name={event.name}
                     headerImage={event.image[0] && event.image[0].localFile.publicURL}
@@ -17,6 +19,12 @@ const EventTemplate = ({ data, pageContext }) => {
                     price={event.price}
                 />
             </div>
+            <NextEvents
+                events={events}
+                pageContext={pageContext}
+                headerText="Next events:"
+                additionalClass={['py-5']}
+            />
         </Layout>
     );
 };
@@ -68,7 +76,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        allEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}, limit: 3, filter: {slug: {ne: $slug}}) {
+        allEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}, limit: 4, filter: {slug: {ne: $slug}}) {
             nodes {
                 id
                 name
