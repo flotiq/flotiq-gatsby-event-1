@@ -1,13 +1,22 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
+import EventDescriptionCard from '../components/EventDescriptionCard';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
-    const events = data.allEvent.nodes;
     return (
         <Layout additionalClass={['bg-white']}>
-            <div>Event</div>
+            <div className="max-w-7xl mx-auto">
+                <EventDescriptionCard
+                    name={event.name}
+                    headerImage={event.image[0] && event.image[0].localFile.publicURL}
+                    date={event.date}
+                    description={event.description}
+                    address={event.address}
+                    price={event.price}
+                />
+            </div>
         </Layout>
     );
 };
