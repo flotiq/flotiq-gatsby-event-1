@@ -19,6 +19,9 @@ const IndexPage = ({ data }) => {
                 subheaderText="The Power or APIs"
             />
             <Calendar additionalClass={['my-5']} currentMonthYear="January 2022" currentDay="01" />
+            {events.map((event) => (
+                <a href={`/${event.slug}`}><p key={event.id}>{event.name}</p></a>
+            ))}
         </Layout>
     );
 };
