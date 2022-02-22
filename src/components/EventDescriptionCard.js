@@ -3,7 +3,6 @@ import { Card, Paragraph } from 'flotiq-components-react';
 
 const EventDescriptionCard = ({ name, headerImage, date, description }) => (
     <Card
-        vertical
         bordered={false}
         rounded="none"
         additionalClasses={['w-full flex flex-col mb-10 my-10 rounded-lg']}

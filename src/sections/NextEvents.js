@@ -15,6 +15,7 @@ const NextEvents = ({ events, headerText, pageContext, additionalClass }) => (
                     headerImage={event.image[0] && event.image[0].localFile.publicURL}
                     name={event.name}
                     date={event.date}
+                    slug={event.slug}
                 />
             ))}
         </div>
