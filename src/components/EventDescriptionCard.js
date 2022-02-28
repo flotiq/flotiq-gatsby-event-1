@@ -19,7 +19,7 @@ const EventDescriptionCard = ({ name, headerImage, date, description }) => (
         >
             <div className="pt-24 pb-12">
                 <p className="flex items-start justify-center h-full border-r-2 border-gray text-lg px-5 md:px-0">
-                    {date}
+                    {date.replace('T', ' ')}
                 </p>
             </div>
             <div className="col-span-3 py-10 px-5 md:px-10">
