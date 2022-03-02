@@ -5,12 +5,16 @@ import Contact from '../sections/Contact';
 import ContactBackgroundImage from '../assets/hero-bg.jpg';
 import NextEvents from '../sections/NextEvents';
 import EventDescriptionCard from '../components/EventDescriptionCard';
+import EventBackButton from '../components/EventBackButton';
 
 const EventTemplate = ({ data, pageContext }) => {
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
         <Layout additionalClass={['bg-light-gray']}>
+            <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <EventBackButton additionalClass={['mt-12']} backButtonText="Back to homepage" />
+            </div>
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <EventDescriptionCard
                     name={event.name}
