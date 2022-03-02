@@ -144,20 +144,20 @@ const Calendar = ({ additionalClass, currentMonthYear, events, firstDay }) => {
                                         <ol className="pl-4">
                                             {day.events.map((event) => (
                                                 <Link to={`/${event.slug}`}>
-                                                    <li key={event.id} className="pb-3">
-                                                        <a href={event.href} className="group flex flex-col">
-                                                            <time
-                                                                dateTime={event.date}
-                                                                className="hidden flex-none xl:block italic text-xs"
-                                                            >
-                                                                {new Date(event.date).getHours().toString().padStart(2, '0')}
-                                                                :
-                                                                {new Date(event.date).getMinutes().toString().padStart(2, '0')}
-                                                            </time>
-                                                            <p className="flex-auto font-semibold text-sm">
-                                                                {event.name}
-                                                            </p>
-                                                        </a>
+                                                    <li key={event.id} className="pb-3 group flex flex-col">
+                                                        <time
+                                                            dateTime={event.date}
+                                                            className="hidden flex-none xl:block italic text-xs"
+                                                        >
+                                                            {new Date(event.date)
+                                                                .getHours().toString().padStart(2, '0')}
+                                                            :
+                                                            {new Date(event.date)
+                                                                .getMinutes().toString().padStart(2, '0')}
+                                                        </time>
+                                                        <p className="flex-auto font-semibold text-sm">
+                                                            {event.name}
+                                                        </p>
                                                     </li>
                                                 </Link>
                                             ))}
@@ -222,22 +222,26 @@ const Calendar = ({ additionalClass, currentMonthYear, events, firstDay }) => {
                                 >
                                     <div className="flex-auto">
                                         <p className="font-semibold text-lg">{event.name}</p>
-                                        <time dateTime={event.datetime} className="mt-2 flex items-center italic">
+                                        <time dateTime={event.date} className="mt-2 flex items-center italic">
                                             <ClockIcon className="mr-2 h-5 w-5 text-secondary" aria-hidden="true" />
-                                            {event.time}
+                                            {new Date(event.date)
+                                                .getHours().toString().padStart(2, '0')}
+                                            :
+                                            {new Date(event.date)
+                                                .getMinutes().toString().padStart(2, '0')}
                                         </time>
                                     </div>
-                                    <a
-                                        href={event.href}
-                                        className="ml-6 flex-none self-center bg-secondary py-2 px-3
-                                    font-semibold text-white opacity-0 focus:opacity-100 group-hover:opacity-100"
+                                    <Link
+                                        to={`/${event.slug}`}
+                                        className="ml-6 flex-none self-center bg-secondary
+                                        py-2 px-3 font-semibold text-white"
                                     >
-                                        Edit
+                                        Show
                                         <span className="sr-only">
                                             ,
                                             {event.name}
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ol>
