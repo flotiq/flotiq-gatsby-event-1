@@ -1,29 +1,21 @@
 {
-  "id": "event-1",
-  "date": "{{date:-30d}}T12:00",
-  "name": "Angular Connect",
-  "slug": "angular-connect",
+  "id": "event-3",
+  "date": "{{date:+30d}}T10:00",
+  "name": "Angular Conf Australia",
+  "slug": "angular-conf-australia",
   "image": [
     {
       "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-126106fa-c0d6-4dae-9932-4f71c60ca189"
+      "dataUrl": "/api/v1/content/_media/_media-f793bcde-413f-465c-b544-79caeaece6c3"
     }
   ],
   "price": "FREE",
-  "address": "London, UK",
+  "address": "Melbourne, Australia",
   "excerpt": "Ut interdum auctor ipsum, at auctor augue gravida fermentum. Vivamus tristique tortor eget lacus volutpat, nec efficitur nunc hendrerit. Integer eu dapibus leo, sed gravida massa. Etiam luctus eros ut arcu tincidunt, commodo maximus purus pulvinar. Cras sit amet nulla at risus accumsan sodales.",
   "gallery": [
     {
       "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-cec4ee79-0368-4609-849c-5fd5a3db69c0"
-    },
-    {
-      "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-43e239f7-d694-48db-9448-79b9fb6111df"
-    },
-    {
-      "type": "internal",
-      "dataUrl": "/api/v1/content/_media/_media-126106fa-c0d6-4dae-9932-4f71c60ca189"
+      "dataUrl": "/api/v1/content/_media/_media-0740f489-aff5-47cf-8fba-bec544562b3c"
     }
   ],
   "description": "<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel commodo erat, eget interdum risus. Donec dignissim, lacus at commodo ullamcorper, erat eros hendrerit nunc, a feugiat ligula enim et velit. Fusce ultrices elit quis ex cursus posuere.</strong></p><p>Ut interdum auctor ipsum, at auctor augue gravida fermentum. Vivamus tristique tortor eget lacus volutpat, nec efficitur nunc hendrerit. Integer eu dapibus leo, sed gravida massa. Etiam luctus eros ut arcu tincidunt, commodo maximus purus pulvinar. Cras sit amet nulla at risus accumsan sodales.</p>"

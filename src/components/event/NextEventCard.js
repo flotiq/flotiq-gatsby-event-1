@@ -19,7 +19,7 @@ const NextEventCard = ({ name, headerImage, date, slug }) => (
                     {name}
                 </Card.Title>
                 <p>
-                    {date}
+                    {date.replace('T', ' ')}
                 </p>
             </Card.Body>
         </Link>

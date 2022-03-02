@@ -2,64 +2,43 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../layouts/layout';
-import HeroSection from '../sections/hero-section';
+import HeroSection from '../sections/HeroSection';
 import HeroSectionBgImage from '../assets/hero-bg.jpg';
 import Calendar from '../components/Calendar';
+import NextMonthsNavigation from '../components/NextMonthsNavigation';
 
-const IndexPage = ({ data }) => {
-    const events = data.allEvent.nodes;
+/**
+ * Content of index page
+ */
+const IndexPage = ({ data, pageContext }) => {
+    const { events, month, firstDay, currentPage, numPages } = pageContext;
     return (
         <Layout additionalClass={['bg-white']}>
+            {/* Content of <head> tag */}
             <Helmet>
-                <title>Flotiq Gatsby event starter</title>
+                <title>{data.site.siteMetadata.title}</title>
             </Helmet>
             <HeroSection
                 heroBackgroundImage={HeroSectionBgImage}
                 headerText="Flotiq Webinars"
                 subheaderText="The Power or APIs"
             />
-            <Calendar additionalClass={['my-5']} currentMonthYear="January 2022" currentDay="01" />
-            {events.map((event) => (
-                <a href={`/${event.slug}`}><p key={event.id}>{event.name}</p></a>
-            ))}
+            <Calendar
+                additionalClass={['my-5']}
+                currentMonthYear={month}
+                events={events}
+                firstDay={firstDay}
+            />
+            <NextMonthsNavigation page={currentPage} numOfPages={numPages} />
         </Layout>
     );
 };
 
 export const pageQuery = graphql`
-    query indexQuery($skip: Int!, $limit: Int!) {
+    query indexQuery {
         site {
             siteMetadata {
                 title
-            }
-        }
-        allEvent(sort: {fields: date, order: ASC}, limit: $limit, skip: $skip,) {
-            nodes {
-                id
-                name
-                slug
-                image {
-                    extension
-                    url
-                    width
-                    height
-                    localFile {
-                        publicURL
-                        childImageSharp {
-                            gatsbyImageData(layout: FULL_WIDTH)
-                        }
-                    }
-                }
-                address
-                date
-                price
-                description
-                excerpt
-                gallery {
-                    localFile {
-                        publicURL
-                    }
-                }
             }
         }
     }

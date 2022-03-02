@@ -8,6 +8,7 @@ import EventDescriptionCard from '../components/EventDescriptionCard';
 import EventBackButton from '../components/EventBackButton';
 
 const EventTemplate = ({ data, pageContext }) => {
+    // Extracting data from GraphQL query, the query is on the bottom of this file
     const { event } = data;
     const events = data.allEvent.nodes;
     return (
@@ -44,6 +45,9 @@ const EventTemplate = ({ data, pageContext }) => {
     );
 };
 
+/**
+ * GraphQL query getting data for the page
+ */
 export const pageQuery = graphql`
     query EventBySlug($slug: String!) {
         site {
@@ -91,7 +95,7 @@ export const pageQuery = graphql`
                 }
             }
         }
-        allEvent(sort: {fields: flotiqInternal___createdAt, order: DESC}, limit: 4, filter: {slug: {ne: $slug}}) {
+        allEvent(sort: {fields: date, order: ASC}, limit: 4, filter: {slug: {ne: $slug}}) {
             nodes {
                 id
                 name
