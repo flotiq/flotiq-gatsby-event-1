@@ -1,19 +1,20 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Header } from 'flotiq-components-react';
-import Logo from '../assets/Logo.svg';
+import { Button, Header } from 'flotiq-components-react';
+import { Link } from 'gatsby';
+import Layout from '../layouts/layout';
 
 const NotFoundPage = () => (
-    <main className="flex flex-col h-screen justify-center items-center text-light-blue">
+    <Layout>
         <Helmet>
-            <html className="bg-dark-blue" lang="en" />
             <title>Page not found</title>
         </Helmet>
-        <div className="text-center mt-5 mb-5">
-            <img src={Logo} alt="Flotiq" width="300px" />
+        <Header text="Page not found, sorry" alignment="center" additionalClasses={['my-20', '!py-20']} />
+        <div className="text-center my-20 py-20">
+            {/* Example usage of button */}
+            <Link to="/"><Button label="Go back to index" /></Link>
         </div>
-        <Header text="Page not found, sorry" />
-    </main>
+    </Layout>
 );
 
 export default NotFoundPage;

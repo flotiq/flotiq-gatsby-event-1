@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import Layout from '../layouts/layout';
 import Contact from '../sections/Contact';
 import ContactBackgroundImage from '../assets/hero-bg.jpg';
@@ -13,6 +14,13 @@ const EventTemplate = ({ data, pageContext }) => {
     const events = data.allEvent.nodes;
     return (
         <Layout additionalClass={['bg-light-gray']}>
+            <Helmet>
+                <title>{event.name}</title>
+                <meta
+                    name="description"
+                    content={event.description}
+                />
+            </Helmet>
             <div className="flex flex-wrap max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <EventBackButton additionalClass={['mt-12']} backButtonText="Back to homepage" />
             </div>
