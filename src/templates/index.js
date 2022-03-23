@@ -17,6 +17,10 @@ const IndexPage = ({ data, pageContext }) => {
             {/* Content of <head> tag */}
             <Helmet>
                 <title>{data.site.siteMetadata.title}</title>
+                <meta
+                    name="description"
+                    content={data.site.siteMetadata.description}
+                />
             </Helmet>
             <HeroSection
                 heroBackgroundImage={HeroSectionBgImage}
@@ -39,6 +43,7 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
                 title
+                description
             }
         }
     }
