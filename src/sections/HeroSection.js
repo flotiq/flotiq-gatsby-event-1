@@ -7,13 +7,15 @@ const HeroSection = ({ heroBackgroundImage, headerText, subheaderText }) => (
         style={{ backgroundImage: `url('${heroBackgroundImage}')` }}
     >
         <Header
-            text={headerText}
             additionalClasses={['font-inter text-white tracking-widest !p-0 !text-3xl md:!text-6xl']}
-        />
+        >
+            {headerText}
+        </Header>
         <Header
-            text={subheaderText}
             additionalClasses={['text-white tracking-widest !text-base md:!text-xl !font-normal !p-0 mt-2 md:mt-5']}
-        />
+        >
+            {subheaderText}
+        </Header>
     </div>
 );
 
