@@ -26,7 +26,7 @@ const EventDescriptionCard = ({ name, headerImage, date, description }) => (
                 <Card.Title additionalClasses={['font-normal mt-5 mb-8']}>
                     {name}
                 </Card.Title>
-                <Paragraph text={description} />
+                <Paragraph>{description}</Paragraph>
             </div>
         </Card.Body>
     </Card>

@@ -83,12 +83,12 @@ const Calendar = ({ additionalClass, currentMonthYear, events, firstDay }) => {
     return (
         <div className={['max-w-7xl mx-auto', ...additionalClass].join(' ')}>
             <div className="flex items-end justify-between text-red pb-10">
-                <Header className="font-normal text-2xl md:text-3xl" text={currentMonthYear} />
-                <Header
-                    className="font-normal text-5xl md:text-6xl"
-                    level={2}
-                    text={(new Date(firstDay).getMonth() + 1).toString().padStart(2, '0')}
-                />
+                <Header className="font-normal text-2xl md:text-3xl">
+                    {currentMonthYear}
+                </Header>
+                <Header className="font-normal text-5xl md:text-6xl" level={2}>
+                    {(new Date(firstDay).getMonth() + 1).toString().padStart(2, '0')}
+                </Header>
             </div>
             <div className="lg:flex lg:h-full lg:flex-col">
                 <div className="lg:flex lg:flex-auto lg:flex-col">
@@ -143,8 +143,8 @@ const Calendar = ({ additionalClass, currentMonthYear, events, firstDay }) => {
                                     {day.events.length > 0 && (
                                         <ol className="pl-4">
                                             {day.events.map((event) => (
-                                                <Link to={`/${event.slug}`}>
-                                                    <li key={event.id} className="pb-3 group flex flex-col">
+                                                <Link to={`/${event.slug}`} key={event.id}>
+                                                    <li className="pb-3 group flex flex-col">
                                                         <time
                                                             dateTime={event.date}
                                                             className="hidden flex-none xl:block italic text-xs"

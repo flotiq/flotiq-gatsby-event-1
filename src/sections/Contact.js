@@ -11,15 +11,16 @@ const Contact = ({
         <div className="max-w-4xl m-auto grid grid-cols-1 md:grid-cols-2 px-5 sm:px-10 md:px-0">
             <div className="flex flex-col md:pr-10 mb-10 md:mb-0">
                 <Header
-                    text={headerText}
                     additionalClasses={['font-inter text-white tracking-widest !p-0 !text-4xl md:!text-6xl']}
-                />
+                >
+                    {headerText}
+                </Header>
                 <Header
-                    text={subheaderText}
                     level={2}
-                    additionalClasses={['text-white tracking-widest !text-2xl '
-                    + 'md:!text-3xl !p-0 mt-4 md:mt-8']}
-                />
+                    additionalClasses={['text-white tracking-widest !text-2xl md:!text-3xl !p-0 mt-4 md:mt-8']}
+                >
+                    {subheaderText}
+                </Header>
             </div>
             <div className="flex justify-end">
                 <form
