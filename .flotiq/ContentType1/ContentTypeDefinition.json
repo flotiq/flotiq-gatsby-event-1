@@ -1,0 +1,142 @@
+{
+  "name": "event",
+  "label": "Event",
+  "schemaDefinition": {
+    "type": "object",
+    "allOf": [
+      {
+        "$ref": "#/components/schemas/AbstractContentTypeSchemaDefinition"
+      },
+      {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^$|^([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))T?(([0-1]?[0-9]|2[0-3]):[0-5][0-9])?$",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "image": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          },
+          "price": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string",
+            "minLength": 1
+          },
+          "excerpt": {
+            "type": "string"
+          },
+          "gallery": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataSource"
+            },
+            "minItems": 0
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    ],
+    "required": [
+      "name",
+      "slug",
+      "address",
+      "date"
+    ],
+    "additionalProperties": false
+  },
+  "metaDefinition": {
+    "order": [
+      "name",
+      "slug",
+      "image",
+      "address",
+      "date",
+      "price",
+      "description",
+      "excerpt",
+      "gallery"
+    ],
+    "propertiesConfig": {
+      "date": {
+        "label": "Date",
+        "unique": false,
+        "helpText": "",
+        "showTime": true,
+        "inputType": "dateTime"
+      },
+      "name": {
+        "label": "Name",
+        "unique": false,
+        "helpText": "",
+        "inputType": "text",
+        "isTitlePart": true
+      },
+      "slug": {
+        "label": "Slug",
+        "unique": true,
+        "helpText": "",
+        "inputType": "text"
+      },
+      "image": {
+        "label": "Event featured image",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationContenttype": "_media"
+        }
+      },
+      "price": {
+        "label": "Ticket price",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "address": {
+        "label": "Address",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "excerpt": {
+        "label": "Description excerpt",
+        "unique": false,
+        "helpText": "",
+        "inputType": "textarea"
+      },
+      "gallery": {
+        "label": "Gallery",
+        "unique": false,
+        "helpText": "",
+        "inputType": "datasource",
+        "validation": {
+          "relationMultiple": true,
+          "relationContenttype": "_media"
+        }
+      },
+      "description": {
+        "label": "Description",
+        "unique": false,
+        "helpText": "",
+        "inputType": "richtext"
+      }
+    }
+  }
+}

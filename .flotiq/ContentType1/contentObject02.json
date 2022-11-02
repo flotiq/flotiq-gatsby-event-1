@@ -1,0 +1,38 @@
+{
+  "id": "event-2",
+  "date": "{{date}}T09:00",
+  "name": "NgVikings Meetup",
+  "slug": "ngvikings-meetup",
+  "image": [
+    {
+      "type": "internal",
+      "dataUrl": "/api/v1/content/_media/_media-d8c64d2e-5b4f-4a5e-b74f-54479a265999"
+    }
+  ],
+  "price": "$40 - $100",
+  "address": "Online",
+  "excerpt": "Ut interdum auctor ipsum, at auctor augue gravida fermentum. Vivamus tristique tortor eget lacus volutpat, nec efficitur nunc hendrerit. Integer eu dapibus leo, sed gravida massa. Etiam luctus eros ut arcu tincidunt, commodo maximus purus pulvinar. Cras sit amet nulla at risus accumsan sodales.",
+  "gallery": [
+    {
+      "type": "internal",
+      "dataUrl": "/api/v1/content/_media/_media-126106fa-c0d6-4dae-9932-4f71c60ca189"
+    },
+    {
+      "type": "internal",
+      "dataUrl": "/api/v1/content/_media/_media-cec4ee79-0368-4609-849c-5fd5a3db69c0"
+    },
+    {
+      "type": "internal",
+      "dataUrl": "/api/v1/content/_media/_media-43e239f7-d694-48db-9448-79b9fb6111df"
+    }
+  ],
+  "internal": {
+    "createdAt": "2020-12-14T15:00:10+00:00",
+    "deletedAt": "",
+    "updatedAt": "2022-02-17T16:58:29+00:00",
+    "contentType": "event",
+    "objectTitle": "NgVikings Meetup",
+    "workflow_state": "saved"
+  },
+  "description": "<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel commodo erat, eget interdum risus. Donec dignissim, lacus at commodo ullamcorper, erat eros hendrerit nunc, a feugiat ligula enim et velit. Fusce ultrices elit quis ex cursus posuere.</strong></p><p>Ut interdum auctor ipsum, at auctor augue gravida fermentum. Vivamus tristique tortor eget lacus volutpat, nec efficitur nunc hendrerit. Integer eu dapibus leo, sed gravida massa. Etiam luctus eros ut arcu tincidunt, commodo maximus purus pulvinar. Cras sit amet nulla at risus accumsan sodales.</p>"
+}
