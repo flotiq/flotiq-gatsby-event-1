@@ -14,7 +14,7 @@ const NextEvents = ({ events, headerText, pageContext, additionalClass }) => (
                 <NextEventCard
                     key={event.id}
                     onClick={() => { navigate(`/${event.slug}`); }}
-                    headerImage={event.image[0] && event.image[0].localFile.publicURL}
+                    headerImage={event.image[0] && event.image[0].localFile}
                     name={event.name}
                     date={event.date}
                     slug={event.slug}
