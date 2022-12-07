@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'flotiq-components-react';
 import { Link } from 'gatsby';
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const NextEventCard = ({ name, headerImage, date, slug }) => (
     <Card
