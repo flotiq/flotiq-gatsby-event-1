@@ -5,31 +5,31 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const singleEvent = path.resolve('./src/templates/event.js');
     const result = await graphql(`
-        query GetEvents {
-            allEvent(sort: {order: ASC, fields: date}) {
-                edges {
-                    node {
-                        id
-                        name
-                        slug
-                        image {
-                            extension
-                            id
-                        }
-                        address
-                        date
-                        price
-                        description
-                        excerpt
-                        gallery {
-                            localFile {
-                              publicURL
-                            }
-                        }
-                    }
+    query GetEvents {
+        allEvent(sort: {date: ASC}) {
+          edges {
+            node {
+              id
+              name
+              slug
+              image {
+                extension
+                id
+              }
+              address
+              date
+              price
+              description
+              excerpt
+              gallery {
+                localFile {
+                  publicURL
                 }
+              }
             }
+          }
         }
+      }
 `);
 
     if (result.errors) {
@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const filterDate = new Date(`${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-01`);
     events = events.filter((event) => new Date(event.node.date) > filterDate);
 
-    let monthSplitEvents = { };
+    let monthSplitEvents = {};
     events.forEach((event) => {
         const month = new Date(event.node.date);
         const monthIndex = `${month.getFullYear()}-${month.getMonth() + 1}`;

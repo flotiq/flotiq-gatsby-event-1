@@ -57,76 +57,76 @@ const EventTemplate = ({ data, pageContext }) => {
  * GraphQL query getting data for the page
  */
 export const pageQuery = graphql`
-    query EventBySlug($slug: String!) {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-        event( slug: { eq: $slug } ) {
-            id
-            name
-            slug
-            image {
-                extension
-                url
-                width
-                height
-                localFile {
-                    publicURL
-                    childImageSharp {
-                        gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
-                    }
-                }
-            }
-            address
-            date
-            price
-            description
-            excerpt
-            price
-            image {
-                extension
-                url
-                width
-                height
-                localFile {
-                    publicURL
-                    childImageSharp {
-                        gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
-                    }
-                }
-            }
-            gallery {
-                localFile {
-                    publicURL
-                }
-            }
-        }
-        allEvent(sort: {fields: date, order: ASC}, limit: 4, filter: {slug: {ne: $slug}}) {
-            nodes {
-                id
-                name
-                slug
-                address
-                date
-                excerpt
-                price
-                image {
-                    extension
-                    url
-                    width
-                    height
-                    localFile {
-                        publicURL
-                        childImageSharp {
-                            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
-                        }
-                    }
-                }
-            }
-        }
+query EventBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
     }
+    event(slug: {eq: $slug}) {
+      id
+      name
+      slug
+      image {
+        extension
+        url
+        width
+        height
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
+          }
+        }
+      }
+      address
+      date
+      price
+      description
+      excerpt
+      price
+      image {
+        extension
+        url
+        width
+        height
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
+          }
+        }
+      }
+      gallery {
+        localFile {
+          publicURL
+        }
+      }
+    }
+    allEvent(sort: {date: ASC}, limit: 4, filter: {slug: {ne: $slug}}) {
+      nodes {
+        id
+        name
+        slug
+        address
+        date
+        excerpt
+        price
+        image {
+          extension
+          url
+          width
+          height
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default EventTemplate;
