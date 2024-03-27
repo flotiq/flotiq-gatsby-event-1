@@ -112,7 +112,7 @@ Or to [Netlify](https://www.netlify.com/):
 
 [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/flotiq/flotiq-gatsby-event-1)
 
-
+Or [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/mniemcewicz/flotiq-gatsby-event-1)
 ## What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
