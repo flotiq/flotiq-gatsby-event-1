@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Check if Flotiq API key is set
+        run: [ -z "$GATSBY_FLOTIQ_API_KEY" ] && echo "Flotiq API Key is not set, using a starter one." && GATSBY_FLOTIQ_API_KEY="40accb088d028cb0779d8fc2ea7646e4" || true
       - run: npm install -g gatsby-cli
       - run: npm install -g flotiq-cli
       - run: flotiq import . ${{ secrets.GATSBY_FLOTIQ_API_KEY }}
