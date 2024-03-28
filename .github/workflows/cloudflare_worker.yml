@@ -1,7 +1,5 @@
-name: Deploy Worker
+name: Deploy Cloudflare Worker
 on:
-  push:
-  pull_request:
   repository_dispatch:
   workflow_dispatch:
 
@@ -28,13 +26,9 @@ jobs:
             npm install -g flotiq-cli
             flotiq import . $GATSBY_FLOTIQ_API_KEY
           fi
-      
       - run: npm install -g gatsby-cli
-      # - run: flotiq import . $GATSBY_FLOTIQ_API_KEY
       - run: yarn install
       - run: gatsby build
-        # env:
-          # GATSBY_FLOTIQ_API_KEY: ${{ secrets.GATSBY_FLOTIQ_API_KEY }}
       - name: Build & Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
