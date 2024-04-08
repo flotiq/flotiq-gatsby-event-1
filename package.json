@@ -77,6 +77,6 @@
     "url": "https://github.com/flotiq/flotiq-gatsby-event-1/issues"
   },
   "resolutions": {
-    "webpack": "^5.85.0"
+    "webpack": "^5.91.0"
   }
 }
