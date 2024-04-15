@@ -6805,29 +6805,7 @@ gatsby-cli@^5.12.2:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^4.12.0, gatsby-core-utils@^4.3.1:
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.12.0.tgz#1ee4ced94cf2c7b2139d8d3ea6321391ce3ffdea"
-  integrity sha512-1vK0cmL8FNHAddQ5WZt0yTPdFSZuMPNUSsHckM+ZdVmRxyif3aZYSi7ofj6sJo/UvhKj7fBqJv/smZYpp2PRqg==
-  dependencies:
-    "@babel/runtime" "^7.20.13"
-    ci-info "2.0.0"
-    configstore "^5.0.1"
-    fastq "^1.15.0"
-    file-type "^16.5.4"
-    fs-extra "^11.1.1"
-    got "^11.8.6"
-    hash-wasm "^4.9.0"
-    import-from "^4.0.0"
-    lmdb "2.5.3"
-    lock "^1.1.0"
-    node-object-hash "^2.3.10"
-    proper-lockfile "^4.1.2"
-    resolve-from "^5.0.0"
-    tmp "^0.2.1"
-    xdg-basedir "^4.0.0"
-
-gatsby-core-utils@^4.13.1:
+gatsby-core-utils@^4.12.0, gatsby-core-utils@^4.13.1, gatsby-core-utils@^4.3.1:
   version "4.13.1"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.13.1.tgz#57955316486cc85ab150922f481484bc9287205e"
   integrity sha512-w7G6SsQr8T2q+AJ1MxvRNGocCt+wjc22MiRLj2Zi3Ijpjszbr818JxwI4+aPt8WOSHlKT5SYCHICnEvcYPm9gg==
@@ -7079,16 +7057,16 @@ gatsby-sharp@^1.13.0:
   dependencies:
     sharp "^0.32.6"
 
-gatsby-source-filesystem@^5.3.1:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-5.12.0.tgz#5f970fccc3102a4c62d99575c55a2a167912bb02"
-  integrity sha512-0BZkgADBu56vTzZ6TLvrMXhp8MzpEqvtpsI+VRtNTlsu6ULaHRjoMClomlAqWecjBXTkujhwpSjnIfEmpmCaLQ==
+gatsby-source-filesystem@^5.13.1, gatsby-source-filesystem@^5.3.1:
+  version "5.13.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-5.13.1.tgz#1aad8f969fbfd4efe6f7cfcd8542253f54fdbd8a"
+  integrity sha512-nFWzOBpi84nDeVNeO7bpKL9mVYMl1tfjJmE5l868YATFShGzZnA6qMd200XCsf78PexZHAiV/P1MlsyKqjJduA==
   dependencies:
     "@babel/runtime" "^7.20.13"
     chokidar "^3.5.3"
     file-type "^16.5.4"
     fs-extra "^11.1.1"
-    gatsby-core-utils "^4.12.0"
+    gatsby-core-utils "^4.13.1"
     mime "^3.0.0"
     pretty-bytes "^5.6.0"
     valid-url "^1.0.9"
@@ -11975,7 +11953,7 @@ webpack-virtual-modules@^0.5.0:
   resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.5.0.tgz#362f14738a56dae107937ab98ea7062e8bdd3b6c"
   integrity sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==
 
-webpack@^5.85.0, webpack@^5.88.1, webpack@^5.91.0:
+webpack@^5.88.1, webpack@^5.91.0:
   version "5.91.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.91.0.tgz#ffa92c1c618d18c878f06892bbdc3373c71a01d9"
   integrity sha512-rzVwlLeBWHJbmgTC/8TvAcu5vpJNII+MelQpylD4jNERPwpBJOE2lEcko1zJX3QJeLjTTAnQxn/OJ8bjDzVQaw==
