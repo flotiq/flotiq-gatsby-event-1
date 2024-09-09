@@ -3177,10 +3177,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-5.0.20.tgz#968436ab21f05d3b3cb3191fa0958d91e37dde43"
   integrity sha512-rtw2F7xfM7rJmmnncXnR4ADr5wXsp4GyN1O1jmQJ1PMjAK+bm620/ZkQkeOYOkGoa09OksGinOeMA+Mkt6K9PQ==
 
-"@fontsource/lora@^5.0.18":
-  version "5.0.18"
-  resolved "https://registry.yarnpkg.com/@fontsource/lora/-/lora-5.0.18.tgz#c148d1097718008db68d383a86e78f5266d15e4a"
-  integrity sha512-O+b7mxQcQXFV8j9RJNb86IV5OOKmDBe9X3URqVqWyadFa5TXsXW1HTSZZCsuJd8Nd7r66b1rzr/GfPiu1WXFYA==
+"@fontsource/lora@^5.0.19":
+  version "5.0.19"
+  resolved "https://registry.yarnpkg.com/@fontsource/lora/-/lora-5.0.19.tgz#d90533f901795eebf464edddb2152fc2ace0c73d"
+  integrity sha512-GIaLp4z+7bB0oGM28u9C9oL6LPVKrVoGkb2O2pIZadnJcrlOUZCkA/5Me7oPv8gKEVEpnZU4PfNB39MyRJKRIA==
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.13.1":
   version "2.13.1"
