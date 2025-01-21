@@ -1,6 +1,8 @@
 {
   "name": "event",
   "label": "Event",
+  "workflowId": "generic",
+  "internal": false,
   "schemaDefinition": {
     "type": "object",
     "allOf": [
@@ -138,5 +140,6 @@
         "inputType": "richtext"
       }
     }
-  }
+  },
+  "featuredImage": []
 }
